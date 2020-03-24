@@ -1,7 +1,7 @@
 data "aws_elb_service_account" "default" {}
 
 module "label" {
-  source     = "git::https://github.com/cloudposse/terraform-terraform-label.git?ref=tags/0.1.3"
+  source     = "git::https://github.com/geneames/terraform-null-label.git?ref=tags/0.11.1"
   namespace  = "${var.namespace}"
   stage      = "${var.stage}"
   name       = "${var.name}"
@@ -32,7 +32,7 @@ data "aws_iam_policy_document" "default" {
 }
 
 module "s3_bucket" {
-  source                 = "git::https://github.com/cloudposse/terraform-aws-s3-log-storage.git?ref=tags/0.2.0"
+  source                 = "git::https://github.com/geneames/terraform-aws-s3-log-storage.git?ref=tags/0.11.14"
   namespace              = "${var.namespace}"
   stage                  = "${var.stage}"
   name                   = "${var.name}"
